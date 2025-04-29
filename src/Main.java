@@ -43,9 +43,12 @@ public class Main {
         //Задача 4
         System.out.println("Задача 4");
         char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        char [] copyReverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = 0; i < copyReverseFullName.length; i++) {
-            reverseFullName [reverseFullName.length - 1 - i] = copyReverseFullName [i];
+        int pointerLastElement = reverseFullName.length -1;
+        for (int i = 0; i < reverseFullName.length / 2; i++) {
+            char currentElement =reverseFullName [i];
+            reverseFullName [i] = reverseFullName[pointerLastElement];
+            reverseFullName[pointerLastElement] = currentElement;
+            pointerLastElement--;
         }
         System.out.println(Arrays.toString(reverseFullName));
     }
